@@ -1,43 +1,28 @@
 # vim-code-assistant
 code assistant in vim that reads the contents of the buffer and sends a response back in vim
-# 1. Navigate to your home directory using the `cd` command in the terminal:
+# 1. compile the `chpt.c` file with gcc:
 
    ```
-   cd ~
+   gcc -o chpt chpt.c
    ```
 
-# 2. Create a new directory called `.local/bin` if it doesn't already exist:
+# 2. compile the `chptvim.c` file with gcc:
 
    ```
-   mkdir -p ~/.local/bin
+   gcc -o chptvim chptvim.c
    ```
 
-# 3. Navigate to the `.local/bin` directory:
+# 3. Make the `chptvim`  and `chpt` file executable using the `chmod` command:
 
    ```
-   cd ~/.local/bin
-   ```
-
-# 4. Create a symbolic link to the `turbo.py` file using the `ln` command:
+   chmod +x chptvim && chmod +x chpt
 
    ```
-   ln -s /path/to/turbo.py turbo
-   ```
-
-   # Replace `/path/to/turbo.py` with the actual path to the `turbo.py` file.
-
-# 5. Make the `turbo` file executable using the `chmod` command:
+# 3. Move both files to the /usr/local/bin directory:
 
    ```
-   chmod +x turbo
+   mv chptvim /usr/local/bin && mv chpt /usr/local/bin
+   
    ```
 
-# 6. Add the `.local/bin` directory to your PATH by adding the following line to your `.zshrc` file:
-
-   ```
-   export PATH=$HOME/.local/bin:$PATH
-   ```
-# 7. Restart your terminal by running 
-   ```
-   source ~/.zshrc
-   ```
+# 4. When inside vim, go into insert mode and type your question to chatgpt, hit the ESC key and type `:!%chpt` to get the response.
