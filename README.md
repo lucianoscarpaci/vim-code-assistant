@@ -25,4 +25,4 @@ code assistant in vim that reads the contents of the buffer and sends a response
    
    ```
 
-# 4. When inside vim, go into insert mode and type your question to chatgpt, hit the ESC key and type `:!%chpt` to get the response.
+# 4. When inside vim, go into insert mode and type your question to chatgpt, hit the ESC key and type `:%!chpt` to get the response.
