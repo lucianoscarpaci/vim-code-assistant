@@ -18,14 +18,18 @@ code assistant in vim that reads the contents of the buffer and sends a response
    chmod +x md && chmod +x chpt
 
    ```
-# 3. Move both files to the /usr/local/bin directory:
+# 3. Move chpt to the /usr/local/bin directory:
 
    ```
-   mv md /usr/local/bin && mv chpt /usr/local/bin
+   mv chpt /usr/local/bin
    
    ```
 
-# 4. When inside vim, hit the ESC key and type `:%!md` to create a .md file.
+# 4. Edit bash, zsh, or other terminal config with an alias to md.
 
-# 5. after you have created the .md file, enter your question and hit the ESC key and type 
-# `:%!chpt` to get your answer.
+   ```
+   alias md='/path/to/the/md'
+   
+   ```
+
+# 5. Create a .md file enter your question and hit the ctrl+[ key for vim and type `:%!chpt` to get your answer.
