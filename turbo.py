@@ -11,8 +11,9 @@ openai.api_key = os.getenv('OPENAI_KEY')
 # read the contents of the buffer from standard input
 buffer = sys.stdin.read()
 
+
 def assistant(buffer):
-	# program needs to have prevention from a timeout to openAI
+    # program needs to have prevention from a timeout to openAI
     retry_count = 0
     max_retries = 9999
 
@@ -32,6 +33,7 @@ def assistant(buffer):
             response_dict = response.get("choices")
             if response_dict and len(response_dict) > 0:
                 prompt_response = response_dict[0]["message"]["content"]
+
             return prompt_response
 
         except openai.error.InvalidRequestError as e:
@@ -44,4 +46,7 @@ def assistant(buffer):
 
 
 output = assistant(buffer)
+print('\n\n## Question\n\n')
+print(f"{buffer}")
+print('\n\n## Answer\n\n')
 print(f"{output}")

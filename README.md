@@ -6,23 +6,26 @@ code assistant in vim that reads the contents of the buffer and sends a response
    gcc -o chpt chpt.c
    ```
 
-# 2. compile the `chptvim.c` file with gcc:
+# 2. compile the `md.c` file with gcc:
 
    ```
-   gcc -o chptvim chptvim.c
+   gcc -o md md.c
    ```
 
-# 3. Make the `chptvim`  and `chpt` file executable using the `chmod` command:
+# 3. Make the `md`  and `chpt` file executable using the `chmod` command:
 
    ```
-   chmod +x chptvim && chmod +x chpt
+   chmod +x md && chmod +x chpt
 
    ```
 # 3. Move both files to the /usr/local/bin directory:
 
    ```
-   mv chptvim /usr/local/bin && mv chpt /usr/local/bin
+   mv md /usr/local/bin && mv chpt /usr/local/bin
    
    ```
 
-# 4. When inside vim, go into insert mode and type your question to chatgpt, hit the ESC key and type `:%!chpt` to get the response.
+# 4. When inside vim, hit the ESC key and type `:%!md` to create a .md file.
+
+# 5. after you have created the .md file, enter your question and hit the ESC key and type 
+# `:%!chpt` to get your answer.
